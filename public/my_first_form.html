@@ -8,10 +8,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My First HTML Form</title>
+	<h3>My First HTML Form</h3>
 </head>
 <body>
 <form method="POST" action="http://requestb.in/tn5k9wtn">
+	<title>User form</title>
     <p>
         <label for="username">Username</label>
         <input id="username" name="username" type="text" placeholder="Enter your username">
@@ -24,6 +25,92 @@
     	<!-- <button>Loggy</button> -->
         <input type="submit" name="asdf" value="Loggy">
     </p>
+    	<textarea id="email_body" name="email_body">Content Here</textarea>
+</form>
+
+<hr>
+
+<form method="POST" action="http://requestb.in/tn5k9wtn">
+	<h3>Compose an Email</h3>
+    <p>
+        <label for="username">To</label>
+        <input id="username" name="username" type="text" placeholder="Email to">
+    </p>
+    <p>
+        <label for="password">From</label>
+        <input id="password" name="password" type="password" placeholder="Senders email">
+    </p>
+    <p>
+        <label for="password">Subject</label>
+        <input id="password" name="password" type="password" placeholder="Enter subject">
+    </p>
+    <p>
+        <label for="password">Body</label>
+        <input id="password" name="password" type="password" placeholder="Type">
+    </p>
+<label for="mailing_list">
+    <input type="checkbox" id="mailing_list" name="mailing_list" value="yes">
+    <label for="mailing_list">Do you want a copy of the email sent to you?</label>
+</label>
+
+    <p>
+    	<button>Send</button>
+        
+       <label for="mailing_list">
+			    <input type="checkbox" id="mailing_list" name="mailing_list" value="yes">
+			    <label for="mailing_list">Sign me up for the mailing list!</label>
+		</label>
+<hr>
+<br>
+	<h3>Multiple Choice Test</h3>
+		<p>What year did the Titanic sink?</p>
+			<p>
+			<label>
+			    <input type="radio" id="q1b" name="q1" value="1906">
+			    1906
+			</label>
+			<label>
+			    <input type="radio" id="q1c" name="q1" value="1908">
+			    1908
+			</label>
+			<label>
+		    <input type="radio" id="q1d" name="q1" value="1912">
+	    		1912
+			</label>
+			<label>
+			<input type="radio" id="q1a" name="q1" value="1914">
+			    1914
+			</label>
+		</p>
+<br>
+	<p>STOP!..</p>
+	<p>
+			<label>
+				<input type="radio" id="a" name="stp" value="frst"> drop and roll
+			</label>
+			<label>
+				<input type="radio" id="b" name="rlx" value="scd"> relax, don't do it
+			</label>
+			<label>
+				<input type="radio" id="c" name="hmr" value="trd"> hammer time!
+			</label>
+	</p>
+<br>
+	<p>What food do you want to eat right MEOW?!</p>
+
+<label><input type="checkbox" id="os1" name="fd[]" value="sashimi"> Sashimi</label>
+<label><input type="checkbox" id="os2" name="fd[]" value="indian"> Indian</label>
+<label><input type="checkbox" id="os3" name="fd[]" value="tapas"> Tapas</label>
+<label><input type="checkbox" id="os4" name="fd[]" value="mexican"> Mexican</label>
+</form>
+<form>
+	<form method="POST" action="http://requestb.in/tn5k9wtn">
+	<p>Select Testing</p>
+<label for="foodchoice">Are you a vegitarian? </label>
+<select id="foodchoice" name="foodchoice">
+    <option value="1">Yes</option>
+    <option selected value="0">No</option>
+</select>
 </form>
 </body>
 </html>

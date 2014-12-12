@@ -42,12 +42,12 @@
         <input id="password" name="password" type="password" placeholder="Senders email">
     </p>
     <p>
-        <label for="password">Subject</label>
-        <input id="password" name="password" type="password" placeholder="Enter subject">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" placeholder="Enter subject">
     </p>
     <p>
-        <label for="password">Body</label>
-        <input id="password" name="password" type="password" placeholder="Type">
+        <label for="body">Body</label>
+        <input id="body" name="body" type="text" placeholder="Type">
     </p>
 <label for="mailing_list">
     <input type="checkbox" id="mailing_list" name="mailing_list" value="yes">
