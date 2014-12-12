@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+
+var random = Math.floor((Math.random()*50)+1);
+
+for (var i = 1; i < 50; i++) {
+	var random = Math.floor((Math.random()*50)+1);
+	if(random % 2 != 0) {
+		break;
+	}
+}
+
+for(var i =1; i < 50; i++) {
+	if(i % 2 == 0) {
+	continue;
+	} else if (i == random) {
+		console.log('yipes we got it: ' + i);
+	} else {
+		console.log('my odd number is: ' + i);
+	}
+}
+
+	</script>
+</body>
+</html>
+
+// while (i % 2 == 0)	{
+// 		var random = Math.floor((Math.random()*50)+1);
+// }
+
+// for ( i = 1; i >= 50; i+=2) {
+	
+// 	if (i % 2 == 0) {
+// 		console.log(i);
+// 	}
+
+// 	else {
+// 		console.log('You reached the random odd number:' + random);
+// 	}
+// };
