@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>High Low Game</title>
+</head>
+<body>
+	<script>
+var lowresponse = prompt('Please enter a low number:');
+var hiresponse = prompt('Please enter a high number:');
+
+lowresponse = parseInt(lowresponse);
+hiresponse = parseInt(hiresponse);
+		
+console.log(lowresponse);
+console.log(hiresponse);
+
+
+var random = Math.floor((Math.random()* (hiresponse - lowresponse) + lowresponse)+1);
+var random = random;
+
+alert('Your random number is: ' + random);
+
+	
+	</script>
+</body>
+</html>
