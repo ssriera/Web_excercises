@@ -11,12 +11,31 @@ var names = ['bob','bill','norm','ben'];
 // todo:
 // Create a log statement that will log the number of elements in the names array.
 console.log(names.length);
+
+function loopArray(value, key, array) {
+	console.log('The name at index ' + key + ' is: ' + value);
+}
 // todo:
 // Create log statements that will print each of the names array elements individually.
-console.log(names[0]);
-console.log(names[1]);
-console.log(names[2]);
-console.log(names[3]);
+// console.log(names[0],names[1],names[2],names[3]);
+
+//using for loop:
+for (var i = 0; i < names.length; i++) {
+	console.log(names[i]);
+};
+
+//using foreach loop- made a function to pass through:
+names.forEach(loopArray);
+
+//Same for each as above but w/o defining a function.
+// names.forEach(function (value, key, array) {
+// 	console.log('The name at index ' + key + ' is: ' + value);
+// });
+
+for (index in names) {
+	console.log('The name at index ' + index + ' is: ' + names[i]);
+}
+
 	</script>
 </body>
 </html>
