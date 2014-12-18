@@ -21,6 +21,12 @@
 		var jsBirthday = new Date(1970, 8, 6);
 		console.log('Here is my birthday using vanilla js: ' + jsBirthday.toString());
 
+		// Different way to code 
+		var month = jsBirthday.getMonth();
+		var year = jsBirthday.getFullYear();
+		var day = jsBirthday.getDate();
+		console.log(months[month] + ' ' + day + ' ' + year);
+
 		// create the date corresponding to your birthday using Moment.js.
 		var momentBirthday = moment(jsBirthday);
 		console.log(momentBirthday.format("MMM Do YY"));
