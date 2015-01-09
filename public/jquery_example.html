@@ -10,9 +10,9 @@
 		});
 	</script>
 
-	<h1 id="head">Wazzup!</h1>
+	<h1 id="head" text-center>Wazzup!</h1>
 
-	<p class="magic">Magical clouds in an alternate dimension</p>
+	<p class="codeup">Magical clouds in an alternate dimension</p>
 
 	<ul id="list">
 		<li>brownies</li>
@@ -20,23 +20,31 @@
 		<li>pancackes</li>
 	</ul>	
 
-	<div class="magic">The clouds can carry you to bed and do the dishes while you sleep</div>
+	<h4 class="codeup">Wat.</h4>
+
+	<div class="codeup">The clouds can carry you to bed and do the dishes while you sleep</div>
 
 	<script>
 		$('document').ready(function() {
-		    var head = $('#head').html();
-		    	console.log(head);
 
-		    var magic = $('.magic').html();
-		    	console.log(magic);
+		   	$('.codeup').css( 'border', '1px solid red');
+			$('body').css('background-color', 'gray');
+			$('li').css('font-size', '20px');
+			$('h1').css('text-align', 'center');
+			$('p').css('background-color', 'yellow');
+			$('h1').css('background-color', 'yellow');
+			$('li').css('background-color', 'yellow');
+
+
+			//how do you change text color?
 		    
-		    var list = $('#list').html();
-		    	console.log(list);
+		    var head1 = $('h1').html();
+		    	alert(head1);
 		});
 
 
-		
-	</script>
+
+		</script>
 
 	
 <!-- The old way to do the same thing but on Javascript -->
