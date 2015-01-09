@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Jquery</title>
+	<script src="/js/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+			alert( 'The DOM has finished loading!' );
+		});
+	</script>
+
+	<h1 id="head">Wazzup!</h1>
+
+	<p class="magic">Magical clouds in an alternate dimension</p>
+
+	<ul id="list">
+		<li>brownies</li>
+		<li>pizza</li>
+		<li>pancackes</li>
+	</ul>	
+
+	<div class="magic">The clouds can carry you to bed and do the dishes while you sleep</div>
+
+	<script>
+		$('document').ready(function() {
+		    var head = $('#head').html();
+		    	console.log(head);
+
+		    var magic = $('.magic').html();
+		    	console.log(magic);
+		    
+		    var list = $('#list').html();
+		    	console.log(list);
+		});
+
+
+		
+	</script>
+
+	
+<!-- The old way to do the same thing but on Javascript -->
+<!-- 	window.onload = function() {
+    	alert( 'The page has finished loading!' );
+		} -->
+</script>
+</body>
+</html>
