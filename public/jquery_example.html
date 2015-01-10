@@ -22,7 +22,7 @@
 
 	<h4 class="codeup">Wat.</h4>
 
-	<div class="codeup">The clouds can carry you to bed and do the dishes while you sleep</div>
+	<p class="codeup">The clouds can carry you to bed and do the dishes while you sleep</p>
 
 	<script>
 		$('document').ready(function() {
@@ -31,18 +31,33 @@
 			$('body').css('background-color', 'gray');
 			$('li').css('font-size', '20px');
 			$('h1').css('text-align', 'center');
-			$('p').css('background-color', 'yellow');
+			$('p, h1, li').css('background-color', 'yellow');
 			$('h1').css('background-color', 'yellow');
 			$('li').css('background-color', 'yellow');
 
+			//example of hover color change
+		    $('li').hover(
+	        	function() {
+	            	$(this).css('background-color', 'red');
+	        	},
+	        	function() {
+	            	$(this).css('background-color', 'white');
+	        	}
+            );
+	        	
+            $('h1').click(
+            	function() {
+                	$(this).css('background-color', 'white');
+	            });
 
-			//how do you change text color?
-		    
-		    var head1 = $('h1').html();
-		    	alert(head1);
+	        $('p').dblclick(
+            	function() {
+                	$(this).css('font-size', '18px');
+			});
+
+		    // var head1 = $('h1').html();
+		    // 	alert(head1);
 		});
-
-
 
 		</script>
 
