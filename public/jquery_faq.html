@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Top FAQs</title>
+
+<style>
+	.invisible {
+		display: none;
+	}
+</style>
+
+<script src="/js/jquery.min.js"></script>
+<script>
+$('document').ready(function() {
+	$('#toggle').click(function(event) {
+		event.preventDefault();
+		$('dd').toggleClass('invisible');		
+	});
+});
+</script>
+</head>
+
+<body>
+	<dl>
+		<dt>Top 10 FAQs for National Parks</dt>
+			<dd class="invisible">When is the park open?</dd>
+			<dd class="invisible">How much does it cost to enter?</dd>
+			<dd class="invisible">Can I bring my pet into the park?</dd>
+			<dd class="invisible">Where can I get information after I have arrived in the park?</dd>
+			<dd class="invisible">What do I do if I have an emergency in the park?</dd>
+			<dd class="invisible">What wildlife can I see in the park?</dd>
+			<dd class="invisible">Where can I find information about day hikes and backcountry camping?</dd>
+			<dd class="invisible">How long does it take to visit?</dd>
+			<dd class="invisible">What lodging and campgrounds are available in the park?</dd>
+			<dd class="invisible">What kinds of activities are available in the park?</dd>
+	</dl>
+
+	<footer>
+		<a href="#" id="toggle"> Click for visibility</a>
+	</footer>
+</body>
+</html>
