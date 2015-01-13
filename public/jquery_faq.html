@@ -6,6 +6,13 @@
 	.invisible {
 		display: none;
 	}
+	h1 {
+		text-align: center;
+		color: white;
+	}
+	body {
+		background-color: gray;
+	}
 </style>
 
 <script src="/js/jquery.min.js"></script>
@@ -13,13 +20,25 @@
 $('document').ready(function() {
 	$('#toggle').click(function(event) {
 		event.preventDefault();
-		$('dd').toggleClass('invisible');		
+		$('dd').fadeToggle('.invisible');		
+	});
+	$('ul').each(function(){
+		$(this).children().first().css('font-weight', 'bold');
+	});
+	$('#enchantTog').click(function(){
+		$('.enchant').slideToggle();
+	});
+	$('#natparkTog').click(function(){
+		$('.natpark').slideToggle();
+	});
+	$('#txstparkTog').click(function(){
+		$('.txstpark').slideToggle();
 	});
 });
 </script>
 </head>
-
 <body>
+	<h1>All About National Parks</h1>
 	<dl>
 		<dt>Top 10 FAQs for National Parks</dt>
 			<dd class="invisible">When is the park open?</dd>
@@ -33,9 +52,32 @@ $('document').ready(function() {
 			<dd class="invisible">What lodging and campgrounds are available in the park?</dd>
 			<dd class="invisible">What kinds of activities are available in the park?</dd>
 	</dl>
+	<br>
+	<spain><a href="#" id="toggle"> Click for visibility</a></span>
+	<br>
+	<h3 id="enchantTog">Facts about Enchanted Rock:</h3>
+		<ul>
+			<li class="enchant">Native Americans have inhabited the area</li>
+			<li class="enchant">The Spanish visited and created silver mines</li>
+			<li class="enchant">Texas ranger was from here</li>
+			<li class="enchant">Great place to paint on a canvas</li>
+		</ul>
 
-	<footer>
-		<a href="#" id="toggle"> Click for visibility</a>
-	</footer>
+    <h3 id="natparkTog">National Parks</h3>
+    <ul>
+        <li class="natpark">Arches</li>
+        <li class="natpark">Badlands</li>
+        <li class="natpark">Carlsbad Caverns</li>
+        <li class="natpark">Denali</li>
+        <li class="natpark">Everglades</li>
+    </ul>
+    <h3 id="txstparkTog">State Parks of Texas</h3>
+    <ul>
+        <li class="txstpark">Abilene</li>
+        <li class="txstpark">Big Bend</li>
+        <li class="txstpark">Choke Canyon</li>
+        <li class="txstpark">Davis Mountains</li>
+        <li class="txstpark">Enchanted Rock</li>
+    </ul>	
 </body>
 </html>
