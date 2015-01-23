@@ -1,5 +1,5 @@
 <?php
-
+//Define the variables for connection & require
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'national_parks_db');
 define('DB_USER', 'parks_user');
@@ -18,10 +18,12 @@ if (!isset($_GET['page'])) {
 		$offset = ($page-1) * 4;
 };
 
+//To retrieve the park values
 function getParks ($dbc, $offset) { 
 	return $dbc->query('SELECT * FROM national_parks LIMIT 4 OFFSET ' . $offset )->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//Calling the park
 $parks = getParks($dbc, $offset);
 
 ?>
@@ -49,7 +51,7 @@ $parks = getParks($dbc, $offset);
 				<th>Date Established</th>
 				<th>Area in Acres</th>
 			</tr>
-
+<!-- To iterate through the values & populate the table correctly -->
 			<? foreach ($parks as $key => $park): ?>
 				<tr>
 					<? foreach ($park as $value): ?> 
