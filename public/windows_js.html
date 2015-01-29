@@ -7,11 +7,7 @@
     <textarea rows="10" cols="60" id="important"></textarea>
 
     <script>
-            // todo:
-            // Use setTimeout and clearTimeout within this function
-            // so that the save() function is called 5 seconds after
-            // the last key up event. If a new key up event occurs,
-            // you need to cancel the existing timer and set a new one.
+        
 
         var delay = 5000;
         var timeoutid;
@@ -27,26 +23,10 @@
 
         }
 
-            // don't modify the line below
-            // this causes the autosave function to be called whenever
-            // a key up event occurs in the textarea
-            // we will learn about events in the DOM lessons
-
-        // var textarea = document.getElementById('important');
-        // textarea.addEventListener('keyup', autosave, false);
-
     </script>
 
     <script src="/js/jquery.min.js"></script>
     <script type="text/javascript">
-
-            //different way of doing the same save w/o using .on
-
-        // $('document').ready(function() {
-        //     $('#important').keyup(function() {
-        //         autosave();
-        //     })
-        // });
 
 
         $('#important').on('keyup', function() {
