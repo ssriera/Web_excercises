@@ -1,4 +1,9 @@
 <?php
+
+//THINGS TO FIX
+//THE DATE EST FORMAT
+//THE SAVE PARK FUNCTIONALITY
+
 //Define the variables for connection & require
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'national_parks_db');
@@ -18,13 +23,34 @@ if (!isset($_GET['page'])) {
 		$offset = ($page-1) * 4;
 };
 
+
 //To retrieve the park values
-function getParks ($dbc, $offset) { 
-	return $dbc->query('SELECT * FROM national_parks LIMIT 4 OFFSET ' . $offset )->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $dbc->prepare('SELECT * FROM national_parks LIMIT 4 OFFSET :offset');
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+
+$parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+// ATTEMPT To post new park
+if(!empty($_POST)) {
+
+	try {
+		
+		foreach ($_POST as $key => $value) {
+			if (empty($value) || strlen($value) > 240) {
+				throw new InvalidInputException('Invalid Input');
+			}
+		}
+		$parks[] = $_POST;
+		$park->write($parks);
+
+	} catch (InvalidInputException $e) {
+		$e->getMessage();
+	}	
 }
 
-//Calling the park
-$parks = getParks($dbc, $offset);
+
 
 ?>
 
@@ -50,9 +76,11 @@ $parks = getParks($dbc, $offset);
 				<th>Location</th>
 				<th>Date Established</th>
 				<th>Area in Acres</th>
+				<th>Description</th>
 			</tr>
 <!-- To iterate through the values & populate the table correctly -->
 			<? foreach ($parks as $key => $park): ?>
+
 				<tr>
 					<? foreach ($park as $value): ?> 
 					<td><?= $value ?></td>
@@ -64,8 +92,25 @@ $parks = getParks($dbc, $offset);
 	  <a href="?page=<?=$page?>" role="button" class="btn btn-default btn-sm pull-right glyphicon glyphicon-chevron-right">Next</a>
   	  <a href="?page=<?=$previous?>" role="button" class="btn btn-default btn-sm glyphicon glyphicon-chevron-left">Previous</a>
 	</p>
+	<br>
+	<p>
+		<form action="/national_parks.php" method="POST" enctype="multipart/form-data">
+			<h3>Add a Park to the List:</h3>
+				<input type="text" name="name" placeholder="Name">
+				<input type="text" name="location" placeholder="Location">
+				<input type="text" name="date_established" placeholder="Date Established">
+				<input type="text" name="area_in_acres" placeholder="Area in Acres">
+				<input type="text" name="description" placeholder="Description">
+				<input type="submit" value="Save">
+		</form>	
+	</p>
 	</div>
 </div>
+<br>
+<p><hr></p>
+<br>
+
+
 <br>
 <p><hr></p>
 <br>
