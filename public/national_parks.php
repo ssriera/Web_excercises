@@ -12,6 +12,40 @@ define('DB_PASS', 'codeup');
 
 require 'db_connect.php';
 
+// ATTEMPT To post new park
+if(!empty($_POST)) {
+
+	try {
+		
+		foreach ($_POST as $key => $value) {
+			if (empty($value) || strlen($value) > 240) {
+				throw new InvalidInputException('Invalid Input');
+			}
+		}
+		
+		$stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+
+		$parks[] = $_POST;
+		
+		//create foreach to loop through array
+		foreach ($parks as $park) {
+			$stmt->bindValue(':name', $park['name'], PDO::PARAM_STR);
+		    $stmt->bindValue(':location',  $park['location'],  PDO::PARAM_STR);
+		    $stmt->bindValue(':date_established', $park['date_established'], PDO::PARAM_INT);
+		    $stmt->bindValue(':area_in_acres',  $park['area_in_acres'],  PDO::PARAM_INT);
+		    $stmt->bindValue(':description',  $park['description'],  PDO::PARAM_STR);
+
+		    $stmt->execute();
+		}
+
+	} catch (InvalidInputException $e) {
+		$e->getMessage();
+	}	
+}
+
+
+
+
 //pagination for the pages
 if (!isset($_GET['page'])) {
 		$page = 1;
@@ -32,23 +66,7 @@ $stmt->execute();
 $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-// ATTEMPT To post new park
-if(!empty($_POST)) {
 
-	try {
-		
-		foreach ($_POST as $key => $value) {
-			if (empty($value) || strlen($value) > 240) {
-				throw new InvalidInputException('Invalid Input');
-			}
-		}
-		$parks[] = $_POST;
-		$park->write($parks);
-
-	} catch (InvalidInputException $e) {
-		$e->getMessage();
-	}	
-}
 
 
 
